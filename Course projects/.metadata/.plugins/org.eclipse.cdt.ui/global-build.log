@@ -1,0 +1,1237 @@
+10:46:33 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -o war3 war3.o war3_2.o 
+war3_2.o: In function `__gnu_cxx::new_allocator<weapon*>::~new_allocator()':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:179: multiple definition of `warrior::warrior(tribe*, int, int, int, int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:180: first defined here
+war3_2.o: In function `__gnu_cxx::new_allocator<weapon*>::~new_allocator()':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:179: multiple definition of `warrior::warrior(tribe*, int, int, int, int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:180: first defined here
+war3_2.o: In function `warrior::print_info(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:244: multiple definition of `warrior::print_info(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:238: first defined here
+war3_2.o: In function `lion::print_info(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:250: multiple definition of `lion::print_info(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:244: first defined here
+war3_2.o: In function `warrior::init_my_weapon()':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:256: multiple definition of `warrior::init_my_weapon()'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:250: first defined here
+war3_2.o: In function `ninja::init_my_weapon()':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:262: multiple definition of `ninja::init_my_weapon()'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:257: first defined here
+war3_2.o: In function `warrior::use_weapon(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:274: multiple definition of `warrior::use_weapon(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:270: first defined here
+war3_2.o: In function `warrior::get_weapon(weapon*)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:285: multiple definition of `warrior::get_weapon(weapon*)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:281: first defined here
+war3_2.o: In function `warrior::lose_weapon(weapon*, int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:296: multiple definition of `warrior::lose_weapon(weapon*, int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:292: first defined here
+war3_2.o: In function `warrior::print_march(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:304: multiple definition of `warrior::print_march(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:300: first defined here
+war3_2.o: In function `warrior::march(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:310: multiple definition of `warrior::march(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:306: first defined here
+war3_2.o: In function `iceman::march(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:323: multiple definition of `iceman::march(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:320: first defined here
+war3_2.o: In function `lion::march(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:340: multiple definition of `lion::march(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:339: first defined here
+war3_2.o: In function `warrior::wolf_snatch(warrior*, int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:383: multiple definition of `warrior::wolf_snatch(warrior*, int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:354: first defined here
+war3_2.o: In function `tribe::produce(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:435: multiple definition of `tribe::produce(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:406: first defined here
+war3_2.o: In function `tribe::update_my_warriors(warrior*)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:463: multiple definition of `tribe::update_my_warriors(warrior*)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:427: first defined here
+war3_2.o: In function `tribe::lose_warrior(warrior*)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:472: multiple definition of `tribe::lose_warrior(warrior*)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:436: first defined here
+war3_2.o: In function `fields::city_escape(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:480: multiple definition of `fields::city_escape(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:444: first defined here
+war3_2.o: In function `fields::battles(warrior*, warrior*, int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:532: multiple definition of `fields::battles(warrior*, warrior*, int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:453: first defined here
+war3_2.o:war3_2.cpp:(.bss+0x0): multiple definition of `W_NAMES[abi:cxx11]'
+war3.o:war3.cpp:(.bss+0x0): first defined here
+war3_2.o:war3_2.cpp:(.bss+0xa0): multiple definition of `WEAPONS[abi:cxx11]'
+war3.o:war3.cpp:(.bss+0xa0): first defined here
+war3_2.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:19: multiple definition of `CITY_NUM'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:21: first defined here
+war3_2.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:21: multiple definition of `M'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:22: first defined here
+war3_2.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:21: multiple definition of `K'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:22: first defined here
+war3_2.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:22: multiple definition of `r_win'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:23: first defined here
+war3_2.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:22: multiple definition of `b_win'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:23: first defined here
+war3_2.o:war3_2.cpp:(.bss+0x140): multiple definition of `warrior::names[abi:cxx11]'
+war3.o:war3.cpp:(.bss+0x120): first defined here
+war3_2.o: In function `void std::__adjust_heap<__gnu_cxx::__normal_iterator<weapon**, std::vector<weapon*, std::allocator<weapon*> > >, long long, weapon*, __gnu_cxx::__ops::_Iter_comp_iter<cmp_battle> >(__gnu_cxx::__normal_iterator<weapon**, std::vector<weapon*, std::allocator<weapon*> > >, long long, long long, weapon*, __gnu_cxx::__ops::_Iter_comp_iter<cmp_battle>)':
+D:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_heap.h:231: multiple definition of `tribe::sequence'
+war3.o:D:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/vector.tcc:163: first defined here
+war3_2.o:war3_2.cpp:(.data+0x30): multiple definition of `warrior::initHP'
+war3.o:war3.cpp:(.data+0x30): first defined here
+war3_2.o:war3_2.cpp:(.bss+0x240): multiple definition of `warrior::initATK'
+war3.o:war3.cpp:(.bss+0x220): first defined here
+war3_2.o:war3_2.cpp:(.bss+0x1e0): multiple definition of `warrior::weapons[abi:cxx11]'
+war3.o:war3.cpp:(.bss+0x1c0): first defined here
+collect2.exe: error: ld returned 1 exit status
+10:46:49 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -o war3 war3.o war3_2.o 
+war3_2.o: In function `__gnu_cxx::new_allocator<weapon*>::~new_allocator()':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:179: multiple definition of `warrior::warrior(tribe*, int, int, int, int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:180: first defined here
+war3_2.o: In function `__gnu_cxx::new_allocator<weapon*>::~new_allocator()':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:179: multiple definition of `warrior::warrior(tribe*, int, int, int, int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:180: first defined here
+war3_2.o: In function `warrior::print_info(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:244: multiple definition of `warrior::print_info(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:238: first defined here
+war3_2.o: In function `lion::print_info(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:250: multiple definition of `lion::print_info(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:244: first defined here
+war3_2.o: In function `warrior::init_my_weapon()':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:256: multiple definition of `warrior::init_my_weapon()'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:250: first defined here
+war3_2.o: In function `ninja::init_my_weapon()':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:262: multiple definition of `ninja::init_my_weapon()'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:257: first defined here
+war3_2.o: In function `warrior::use_weapon(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:274: multiple definition of `warrior::use_weapon(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:270: first defined here
+war3_2.o: In function `warrior::get_weapon(weapon*)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:285: multiple definition of `warrior::get_weapon(weapon*)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:281: first defined here
+war3_2.o: In function `warrior::lose_weapon(weapon*, int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:296: multiple definition of `warrior::lose_weapon(weapon*, int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:292: first defined here
+war3_2.o: In function `warrior::print_march(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:304: multiple definition of `warrior::print_march(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:300: first defined here
+war3_2.o: In function `warrior::march(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:310: multiple definition of `warrior::march(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:306: first defined here
+war3_2.o: In function `iceman::march(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:323: multiple definition of `iceman::march(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:320: first defined here
+war3_2.o: In function `lion::march(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:340: multiple definition of `lion::march(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:339: first defined here
+war3_2.o: In function `warrior::wolf_snatch(warrior*, int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:383: multiple definition of `warrior::wolf_snatch(warrior*, int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:354: first defined here
+war3_2.o: In function `tribe::produce(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:435: multiple definition of `tribe::produce(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:406: first defined here
+war3_2.o: In function `tribe::update_my_warriors(warrior*)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:463: multiple definition of `tribe::update_my_warriors(warrior*)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:427: first defined here
+war3_2.o: In function `tribe::lose_warrior(warrior*)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:472: multiple definition of `tribe::lose_warrior(warrior*)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:436: first defined here
+war3_2.o: In function `fields::city_escape(int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:480: multiple definition of `fields::city_escape(int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:444: first defined here
+war3_2.o: In function `fields::battles(warrior*, warrior*, int)':
+C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:532: multiple definition of `fields::battles(warrior*, warrior*, int)'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:453: first defined here
+war3_2.o:war3_2.cpp:(.bss+0x0): multiple definition of `W_NAMES[abi:cxx11]'
+war3.o:war3.cpp:(.bss+0x0): first defined here
+war3_2.o:war3_2.cpp:(.bss+0xa0): multiple definition of `WEAPONS[abi:cxx11]'
+war3.o:war3.cpp:(.bss+0xa0): first defined here
+war3_2.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:19: multiple definition of `CITY_NUM'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:21: first defined here
+war3_2.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:21: multiple definition of `M'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:22: first defined here
+war3_2.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:21: multiple definition of `K'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:22: first defined here
+war3_2.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:22: multiple definition of `r_win'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:23: first defined here
+war3_2.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3_2.cpp:22: multiple definition of `b_win'
+war3.o:C:\Users\pc39\iCloudDrive\courses\C++\ex0\war3\Debug/../war3.cpp:23: first defined here
+war3_2.o:war3_2.cpp:(.bss+0x140): multiple definition of `warrior::names[abi:cxx11]'
+war3.o:war3.cpp:(.bss+0x120): first defined here
+war3_2.o: In function `void std::__adjust_heap<__gnu_cxx::__normal_iterator<weapon**, std::vector<weapon*, std::allocator<weapon*> > >, long long, weapon*, __gnu_cxx::__ops::_Iter_comp_iter<cmp_battle> >(__gnu_cxx::__normal_iterator<weapon**, std::vector<weapon*, std::allocator<weapon*> > >, long long, long long, weapon*, __gnu_cxx::__ops::_Iter_comp_iter<cmp_battle>)':
+D:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_heap.h:231: multiple definition of `tribe::sequence'
+war3.o:D:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/vector.tcc:163: first defined here
+war3_2.o:war3_2.cpp:(.data+0x30): multiple definition of `warrior::initHP'
+war3.o:war3.cpp:(.data+0x30): first defined here
+war3_2.o:war3_2.cpp:(.bss+0x240): multiple definition of `warrior::initATK'
+war3.o:war3.cpp:(.bss+0x220): first defined here
+war3_2.o:war3_2.cpp:(.bss+0x1e0): multiple definition of `warrior::weapons[abi:cxx11]'
+war3.o:war3.cpp:(.bss+0x1c0): first defined here
+collect2.exe: error: ld returned 1 exit status
+10:47:20 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -o war3 war3_2.o 
+11:06:16 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In member function 'void fields::battles(warrior*, warrior*, int)':
+..\war3_2.cpp:541:22: warning: unused variable 'blue_weapon' [-Wunused-variable]
+    int red_weapon=0, blue_weapon=0;
+                      ^~~~~~~~~~~
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:574:12: warning: unused variable 'nMin' [-Wunused-variable]
+  int nHour,nMin;
+            ^~~~
+g++ -o war3 war3_2.o 
+11:06:32 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In member function 'void fields::battles(warrior*, warrior*, int)':
+..\war3_2.cpp:541:22: warning: unused variable 'blue_weapon' [-Wunused-variable]
+    int red_weapon=0, blue_weapon=0;
+                      ^~~~~~~~~~~
+g++ -o war3 war3_2.o 
+Info: Nothing to build for ex9_stl
+11:07:57 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+11:11:44 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+11:13:23 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:573:6: warning: unused variable 'nHour' [-Wunused-variable]
+  int nHour;
+      ^~~~~
+..\war3_2.cpp:574:7: warning: unused variable 'end' [-Wunused-variable]
+  bool end=false;
+       ^~~
+..\war3_2.cpp:629:1: error: expected '}' at end of input
+ }
+ ^
+..\war3_2.cpp:567:11: note: to match this '{'
+ int main(){
+           ^
+11:14:07 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:573:6: warning: unused variable 'nHour' [-Wunused-variable]
+  int nHour;
+      ^~~~~
+..\war3_2.cpp:574:7: warning: unused variable 'end' [-Wunused-variable]
+  bool end=false;
+       ^~~
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+11:16:40 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:573:6: warning: unused variable 'nHour' [-Wunused-variable]
+  int nHour;
+      ^~~~~
+..\war3_2.cpp:574:7: warning: unused variable 'end' [-Wunused-variable]
+  bool end=false;
+       ^~~
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+11:17:55 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:573:6: warning: unused variable 'nHour' [-Wunused-variable]
+  int nHour;
+      ^~~~~
+..\war3_2.cpp:574:7: warning: unused variable 'end' [-Wunused-variable]
+  bool end=false;
+       ^~~
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+11:20:56 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+11:22:09 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+11:22:46 **** Incremental Build of configuration Debug for project MaxSum ****
+Info: Internal Builder is used for build
+g++ -o MaxSum.exe maxsum.o 
+D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o):crt0_c.c:(.text.startup+0x2e): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for ex0
+Info: Nothing to build for ex2
+Info: Nothing to build for ex5
+Info: Nothing to build for ex6
+Info: Nothing to build for ex9_stl
+Info: Nothing to build for ex9_stl2
+Info: Nothing to build for specialLock
+Info: Nothing to build for twopow
+11:22:48 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp:590:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:571:6: warning: unused variable 't' [-Wunused-variable]
+  int t;
+      ^
+..\war3_2.cpp:572:6: warning: unused variable 'counts' [-Wunused-variable]
+  int counts=1;
+      ^~~~~~
+g++ -o war3 war3_2.o 
+Info: Nothing to build for week5
+11:22:59 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp:590:3: warning: "/*" within comment [-Wcomment]
+   /*
+    
+g++ -o war3 war3_2.o 
+11:23:17 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+11:24:24 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+11:32:45 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+11:34:52 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+11:36:40 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:577:8: error: redeclaration of 'tribe Red'
+  tribe Red,Blue;
+        ^~~
+..\war3_2.cpp:573:8: note: 'tribe Red' previously declared here
+  tribe Red(1000,0);
+        ^~~
+..\war3_2.cpp:577:12: error: no matching function for call to 'tribe::tribe()'
+  tribe Red,Blue;
+            ^~~~
+..\war3_2.cpp:146:2: note: candidate: 'tribe::tribe(int, int)'
+  tribe(int M,int col){
+  ^~~~~
+..\war3_2.cpp:146:2: note:   candidate expects 2 arguments, 0 provided
+..\war3_2.cpp:130:7: note: candidate: 'tribe::tribe(const tribe&)'
+ class tribe{
+       ^~~~~
+..\war3_2.cpp:130:7: note:   candidate expects 1 argument, 0 provided
+11:37:06 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+11:45:59 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+11:48:55 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+11:51:45 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+11:56:24 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+12:01:00 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In member function 'void tribe::produce(int)':
+..\war3_2.cpp:459:24: warning: unused variable 's' [-Wunused-variable]
+   if(wIdx==0) warrior *s = new warrior(this,wIdx,warr_total+1,w_HP,w_ATK);
+                        ^
+..\war3_2.cpp:460:30: warning: unused variable 's' [-Wunused-variable]
+   else if (wIdx==1) warrior *s = new ninja(this,wIdx,warr_total+1,w_HP,w_ATK);
+                              ^
+..\war3_2.cpp:461:30: warning: unused variable 's' [-Wunused-variable]
+   else if (wIdx==2) warrior *s = new iceman(this,wIdx,warr_total+1,w_HP,w_ATK);
+                              ^
+..\war3_2.cpp:462:30: warning: unused variable 's' [-Wunused-variable]
+   else if (wIdx==3) warrior *s = new lion(this,wIdx,warr_total+1,w_HP,w_ATK);
+                              ^
+..\war3_2.cpp:463:30: warning: unused variable 's' [-Wunused-variable]
+   else if (wIdx==4) warrior *s = new wolf(this,wIdx,warr_total+1,w_HP,w_ATK);
+                              ^
+..\war3_2.cpp:464:22: error: 's' was not declared in this scope
+   update_my_warriors(s);
+                      ^
+12:02:31 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In constructor 'ninja::ninja(tribe*, int, int, int, int)':
+..\war3_2.cpp:202:93: warning: '*<unknown>.ninja::<anonymous>.warrior::ATK' is used uninitialized in this function [-Wuninitialized]
+  ninja(tribe * p,int idx,int w_no, int hp_,int atk_):warrior(ptribe, warr_idx,warr_no,HP,ATK){}
+                                                                                             ^
+..\war3_2.cpp:202:93: warning: '*<unknown>.ninja::<anonymous>.warrior::HP' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp:202:93: warning: '*<unknown>.ninja::<anonymous>.warrior::warr_no' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp:202:93: warning: '*<unknown>.ninja::<anonymous>.warrior::warr_idx' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp:202:93: warning: '*<unknown>.ninja::<anonymous>.warrior::ptribe' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp: In constructor 'iceman::iceman(tribe*, int, int, int, int)':
+..\war3_2.cpp:209:94: warning: '*<unknown>.iceman::<anonymous>.warrior::ATK' is used uninitialized in this function [-Wuninitialized]
+  iceman(tribe * p,int idx,int w_no, int hp_,int atk_):warrior(ptribe, warr_idx,warr_no,HP,ATK){}
+                                                                                              ^
+..\war3_2.cpp:209:94: warning: '*<unknown>.iceman::<anonymous>.warrior::HP' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp:209:94: warning: '*<unknown>.iceman::<anonymous>.warrior::warr_no' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp:209:94: warning: '*<unknown>.iceman::<anonymous>.warrior::warr_idx' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp:209:94: warning: '*<unknown>.iceman::<anonymous>.warrior::ptribe' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp: In constructor 'lion::lion(tribe*, int, int, int, int)':
+..\war3_2.cpp:219:105: warning: '*<unknown>.lion::<anonymous>.warrior::ATK' is used uninitialized in this function [-Wuninitialized]
+  lion(tribe * p,int idx,int w_no, int hp_,int atk_):warrior(ptribe, warr_idx,warr_no,HP,ATK),loyalty(hp_){}
+                                                                                                         ^
+..\war3_2.cpp:219:105: warning: '*<unknown>.lion::<anonymous>.warrior::HP' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp:219:105: warning: '*<unknown>.lion::<anonymous>.warrior::warr_no' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp:219:105: warning: '*<unknown>.lion::<anonymous>.warrior::warr_idx' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp:219:105: warning: '*<unknown>.lion::<anonymous>.warrior::ptribe' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp: In constructor 'wolf::wolf(tribe*, int, int, int, int)':
+..\war3_2.cpp:245:92: warning: '*<unknown>.wolf::<anonymous>.warrior::ATK' is used uninitialized in this function [-Wuninitialized]
+  wolf(tribe * p,int idx,int w_no, int hp_,int atk_):warrior(ptribe, warr_idx,warr_no,HP,ATK){}
+                                                                                            ^
+..\war3_2.cpp:245:92: warning: '*<unknown>.wolf::<anonymous>.warrior::HP' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp:245:92: warning: '*<unknown>.wolf::<anonymous>.warrior::warr_no' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp:245:92: warning: '*<unknown>.wolf::<anonymous>.warrior::warr_idx' is used uninitialized in this function [-Wuninitialized]
+..\war3_2.cpp:245:92: warning: '*<unknown>.wolf::<anonymous>.warrior::ptribe' is used uninitialized in this function [-Wuninitialized]
+g++ -o war3 war3_2.o 
+war3_2.o:war3_2.cpp:(.rdata$.refptr._ZTV4wolf[.refptr._ZTV4wolf]+0x0): undefined reference to `vtable for wolf'
+collect2.exe: error: ld returned 1 exit status
+12:08:06 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+war3_2.o:war3_2.cpp:(.rdata$.refptr._ZTV4wolf[.refptr._ZTV4wolf]+0x0): undefined reference to `vtable for wolf'
+collect2.exe: error: ld returned 1 exit status
+12:08:10 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -o war3 war3_2.o 
+war3_2.o:war3_2.cpp:(.rdata$.refptr._ZTV4wolf[.refptr._ZTV4wolf]+0x0): undefined reference to `vtable for wolf'
+collect2.exe: error: ld returned 1 exit status
+12:09:10 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In member function 'void tribe::produce(int)':
+..\war3_2.cpp:455:29: error: expected type-specifier before 'wolf'
+   else if (wIdx==4) s = new wolf(this,wIdx,warr_total+1,w_HP,w_ATK);
+                             ^~~~
+12:09:36 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+12:10:43 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+12:12:33 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+12:13:48 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+12:23:28 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:610:30: error: cannot call member function 'void fields::city_escape(int)' without object
+     fields::city_escape(nHour);
+                              ^
+12:24:10 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In function 'void city_escape(int)':
+..\war3_2.cpp:487:33: error: 'wR' was not declared in this scope
+   if(fields_all[i]->wR!=NULL && wR->warr_idx==3){
+                                 ^~
+..\war3_2.cpp:490:33: error: 'wB' was not declared in this scope
+   if(fields_all[i]->wB!=NULL && wB->warr_idx==3){
+                                 ^~
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:610:30: error: cannot call member function 'void fields::city_escape(int)' without object
+     fields::city_escape(nHour);
+                              ^
+12:24:25 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In function 'void city_escape(int)':
+..\war3_2.cpp:487:33: error: 'wR' was not declared in this scope
+   if(fields_all[i]->wR!=NULL && wR->warr_idx==3){
+                                 ^~
+..\war3_2.cpp:490:33: error: 'wB' was not declared in this scope
+   if(fields_all[i]->wB!=NULL && wB->warr_idx==3){
+                                 ^~
+12:27:30 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+12:30:01 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+12:31:46 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+12:34:52 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+12:36:45 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+12:42:09 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+12:59:17 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In function 'void city_march1(int)':
+..\war3_2.cpp:492:37: error: base operand of '->' has non-pointer type '__gnu_cxx::__alloc_traits<std::allocator<std::vector<fields*> >, std::vector<fields*> >::value_type' {aka 'std::vector<fields*>'}
+  warrior hero_r=fields_all[CITY_NUM]->wR;
+                                     ^~
+..\war3_2.cpp:493:30: error: base operand of '->' has non-pointer type '__gnu_cxx::__alloc_traits<std::allocator<std::vector<fields*> >, std::vector<fields*> >::value_type' {aka 'std::vector<fields*>'}
+  warrior hero_b=fields_all[1]->wB;
+                              ^~
+12:59:33 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+13:00:35 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+13:03:08 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+13:12:08 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In member function 'void warrior::yell(int)':
+..\war3_2.cpp:434:11: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+    printf("%03d:40 red dragon %d yelled in city %d\n",warr_no,city_n);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\war3_2.cpp:436:11: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+    printf("%03d:40 blue dragon %d yelled in city %d\n",warr_no,city_n);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+g++ -o war3 war3_2.o 
+13:12:28 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+13:13:57 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+13:26:30 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In constructor 'weapon::weapon(warrior*, int)':
+..\war3_2.cpp:41:39: error: invalid use of incomplete type 'class warrior'
+   case 0: weapon_life=0xffff; AP=owner->ATK*2/10;break;
+                                       ^~
+..\war3_2.cpp:11:7: note: forward declaration of 'class warrior'
+ class warrior;
+       ^~~~~~~
+..\war3_2.cpp:42:33: error: invalid use of incomplete type 'class warrior'
+   case 1: weapon_life=1;AP=owner->ATK*4/10;break;
+                                 ^~
+..\war3_2.cpp:11:7: note: forward declaration of 'class warrior'
+ class warrior;
+       ^~~~~~~
+..\war3_2.cpp:43:33: error: invalid use of incomplete type 'class warrior'
+   case 2: weapon_life=2;AP=owner->ATK*3/10;break;
+                                 ^~
+..\war3_2.cpp:11:7: note: forward declaration of 'class warrior'
+ class warrior;
+       ^~~~~~~
+..\war3_2.cpp: In member function 'void warrior::report_status(int)':
+..\war3_2.cpp:445:10: warning: format '%s' expects argument of type 'char*', but argument 3 has type 'std::__cxx11::string' {aka 'std::__cxx11::basic_string<char>'} [-Wformat=]
+   printf("%3d:55 red %s %d has %d sword %d bomb %d arrow and %d elements\n",
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\war3_2.cpp:449:10: warning: format '%s' expects argument of type 'char*', but argument 3 has type 'std::__cxx11::string' {aka 'std::__cxx11::basic_string<char>'} [-Wformat=]
+   printf("%3d:55 blue %s %d has %d sword %d bomb %d arrow and %d elements\n",
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+13:27:13 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In constructor 'weapon::weapon(warrior*, int)':
+..\war3_2.cpp:41:39: error: invalid use of incomplete type 'class warrior'
+   case 0: weapon_life=0xffff; AP=owner->ATK*2/10;break;
+                                       ^~
+..\war3_2.cpp:11:7: note: forward declaration of 'class warrior'
+ class warrior;
+       ^~~~~~~
+..\war3_2.cpp:42:33: error: invalid use of incomplete type 'class warrior'
+   case 1: weapon_life=1;AP=owner->ATK*4/10;break;
+                                 ^~
+..\war3_2.cpp:11:7: note: forward declaration of 'class warrior'
+ class warrior;
+       ^~~~~~~
+..\war3_2.cpp:43:33: error: invalid use of incomplete type 'class warrior'
+   case 2: weapon_life=2;AP=owner->ATK*3/10;break;
+                                 ^~
+..\war3_2.cpp:11:7: note: forward declaration of 'class warrior'
+ class warrior;
+       ^~~~~~~
+13:29:52 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In constructor 'weapon::weapon(warrior*, int)':
+..\war3_2.cpp:179:41: error: 'int warrior::ATK' is protected within this context
+   case 0: weapon_life=0xffff; AP=owner->ATK*2/10;break;
+                                         ^~~
+..\war3_2.cpp:77:10: note: declared protected here
+  int HP, ATK;      //武士生命值，攻击力
+          ^~~
+..\war3_2.cpp:180:35: error: 'int warrior::ATK' is protected within this context
+   case 1: weapon_life=1;AP=owner->ATK*4/10;break;
+                                   ^~~
+..\war3_2.cpp:77:10: note: declared protected here
+  int HP, ATK;      //武士生命值，攻击力
+          ^~~
+..\war3_2.cpp:181:35: error: 'int warrior::ATK' is protected within this context
+   case 2: weapon_life=2;AP=owner->ATK*3/10;break;
+                                   ^~~
+..\war3_2.cpp:77:10: note: declared protected here
+  int HP, ATK;      //武士生命值，攻击力
+          ^~~
+13:30:27 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+13:32:26 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+13:34:33 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+13:39:53 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In constructor 'warrior::warrior(tribe*, int, int, int, int)':
+..\war3_2.cpp:202:14: error: assigning to an array from an initializer list
+   weapon_n={0};
+              ^
+13:40:13 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+13:42:08 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+13:44:09 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+13:45:12 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+13:48:18 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+15:41:36 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:668:5: error: 'city_march' was not declared in this scope
+     city_march(nHour);
+     ^~~~~~~~~~
+15:55:11 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:642:5: error: 'city_march' was not declared in this scope
+     city_march(nHour);
+     ^~~~~~~~~~
+15:55:40 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:642:5: error: 'city_march' was not declared in this scope
+     city_march(nHour);
+     ^~~~~~~~~~
+15:56:50 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+war3_2.o:war3_2.cpp:(.rdata$_ZTV5ninja[_ZTV5ninja]+0x28): undefined reference to `warrior::march(int)'
+war3_2.o:war3_2.cpp:(.rdata$_ZTV7warrior[_ZTV7warrior]+0x28): undefined reference to `warrior::march(int)'
+collect2.exe: error: ld returned 1 exit status
+16:50:19 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In member function 'void warrior::print_takeover(int)':
+..\war3_2.cpp:367:9: warning: format '%s' expects argument of type 'char*', but argument 3 has type 'int' [-Wformat=]
+  printf("%03d:10 blue %s %d reached red headquarter with %d elements and force %d\n",
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    nHour,warr_idx,HP,ATK);
+          ~~~~~~~~
+..\war3_2.cpp:367:9: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+..\war3_2.cpp:372:10: warning: format '%s' expects argument of type 'char*', but argument 3 has type 'int' [-Wformat=]
+   printf("%03d:10 red %s %d reached blue headquarter with %d elements and force %d\n",
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     nHour,warr_idx,HP,ATK);
+           ~~~~~~~~
+..\war3_2.cpp:372:10: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+..\war3_2.cpp: In member function 'void fields::city_takeover(int, int)':
+..\war3_2.cpp:562:37: error: conversion from 'warrior*' to non-scalar type 'warrior' requested
+    warrior hero_b=fields_all[0][1]->wB;
+..\war3_2.cpp:568:44: error: conversion from 'warrior*' to non-scalar type 'warrior' requested
+    warrior hero_b=fields_all[0][CITY_NUM]->wR;
+16:55:10 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In member function 'void warrior::print_takeover(int)':
+..\war3_2.cpp:367:9: warning: format '%s' expects argument of type 'char*', but argument 3 has type 'int' [-Wformat=]
+  printf("%03d:10 blue %s %d reached red headquarter with %d elements and force %d\n",
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    nHour,warr_idx,HP,ATK);
+          ~~~~~~~~
+..\war3_2.cpp:367:9: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+..\war3_2.cpp:372:10: warning: format '%s' expects argument of type 'char*', but argument 3 has type 'int' [-Wformat=]
+   printf("%03d:10 red %s %d reached blue headquarter with %d elements and force %d\n",
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     nHour,warr_idx,HP,ATK);
+           ~~~~~~~~
+..\war3_2.cpp:372:10: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+..\war3_2.cpp: In member function 'void fields::city_takeover(int, int)':
+..\war3_2.cpp:563:4: error: 'heor_b' was not declared in this scope
+    heor_b->takeover(nHour);
+    ^~~~~~
+..\war3_2.cpp:563:4: note: suggested alternative: 'hero_b'
+    heor_b->takeover(nHour);
+    ^~~~~~
+    hero_b
+16:56:42 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In member function 'void fields::city_takeover(int, int)':
+..\war3_2.cpp:563:4: error: 'heor_b' was not declared in this scope
+    heor_b->takeover(nHour);
+    ^~~~~~
+..\war3_2.cpp:563:4: note: suggested alternative: 'hero_b'
+    heor_b->takeover(nHour);
+    ^~~~~~
+    hero_b
+16:58:42 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+16:59:35 **** Incremental Build of configuration Debug for project MaxSum ****
+Info: Internal Builder is used for build
+g++ -o MaxSum.exe maxsum.o 
+D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o):crt0_c.c:(.text.startup+0x2e): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for ex0
+Info: Nothing to build for ex2
+Info: Nothing to build for ex5
+Info: Nothing to build for ex6
+Info: Nothing to build for ex9_stl
+Info: Nothing to build for ex9_stl2
+Info: Nothing to build for specialLock
+Info: Nothing to build for twopow
+Info: Nothing to build for war3
+Info: Nothing to build for week5
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+17:06:45 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+17:07:11 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file war3.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+17:07:52 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+17:17:30 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+17:21:08 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp:213:10: error: conflicting return type specified for 'virtual int ninja::print_march(int)'
+  virtual print_march(int nHour);
+          ^~~~~~~~~~~
+..\war3_2.cpp:117:15: note: overridden function is 'virtual void warrior::print_march(int)'
+  virtual void print_march(int nHour);
+               ^~~~~~~~~~~
+17:21:26 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+war3_2.o:war3_2.cpp:(.rdata$_ZTV6iceman[_ZTV6iceman]+0x38): undefined reference to `iceman::print_march(int)'
+war3_2.o:war3_2.cpp:(.rdata$_ZTV5ninja[_ZTV5ninja]+0x38): undefined reference to `ninja::print_march(int)'
+war3_2.o:war3_2.cpp:(.rdata$_ZTV4lion[_ZTV4lion]+0x38): undefined reference to `lion::print_march(int)'
+collect2.exe: error: ld returned 1 exit status
+17:21:30 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -o war3 war3_2.o 
+war3_2.o:war3_2.cpp:(.rdata$_ZTV6iceman[_ZTV6iceman]+0x38): undefined reference to `iceman::print_march(int)'
+war3_2.o:war3_2.cpp:(.rdata$_ZTV5ninja[_ZTV5ninja]+0x38): undefined reference to `ninja::print_march(int)'
+war3_2.o:war3_2.cpp:(.rdata$_ZTV4lion[_ZTV4lion]+0x38): undefined reference to `lion::print_march(int)'
+collect2.exe: error: ld returned 1 exit status
+17:23:15 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+17:24:53 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+17:27:04 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+17:27:43 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+17:39:47 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+17:40:33 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+17:45:33 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In member function 'void warrior::report_status(int)':
+..\war3_2.cpp:465:10: warning: too many arguments for format [-Wformat-extra-args]
+   printf("%03d:55 blue %s %d has %d sword %d bomb %d arrow and %d elements\n",
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+g++ -o war3 war3_2.o 
+17:45:44 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+18:03:21 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In member function 'virtual void iceman::takeover(int)':
+..\war3_2.cpp:395:7: error: lvalue required as left operand of assignment
+  HP-1=10;update_alive();//iceman下一步即将到达终点站，如果到的时候死了，将不做任何事情
+       ^~
+18:03:48 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+18:06:07 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+18:12:15 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+18:14:49 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+18:19:58 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:688:74: error: 'int warrior::warr_idx' is protected within this context
+       cout<<"city "<<i<<" has red"<<warrior::names[fields_all[0][i]->wR->warr_idx]<<endl;
+                                                                          ^~~~~~~~
+..\war3_2.cpp:75:6: note: declared protected here
+  int warr_idx;     //武士种类编号
+      ^~~~~~~~
+..\war3_2.cpp:690:75: error: 'int warrior::warr_idx' is protected within this context
+       cout<<"city "<<i<<" has blue"<<warrior::names[fields_all[0][i]->wR->warr_idx]<<endl;
+                                                                           ^~~~~~~~
+..\war3_2.cpp:75:6: note: declared protected here
+  int warr_idx;     //武士种类编号
+      ^~~~~~~~
+18:21:14 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+18:26:40 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+18:40:31 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+18:42:38 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+18:44:11 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+18:56:04 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+19:24:48 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+19:25:27 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+19:30:29 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+19:35:00 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+19:38:04 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+19:56:17 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+20:00:44 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+20:04:56 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+20:05:47 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+20:10:34 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+20:13:04 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+20:17:33 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+20:26:20 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+20:35:42 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+20:40:16 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+20:47:37 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+20:49:07 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+20:52:04 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+20:57:03 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In member function 'void fields::city_escape(int, int)':
+..\war3_2.cpp:524:13: error: invalid conversion from 'warrior*' to 'lion*' [-fpermissive]
+   lion *l = wR;
+             ^~
+..\war3_2.cpp:525:9: error: 'int lion::loyalty' is private within this context
+   if(l->loyalty<=0){
+         ^~~~~~~
+..\war3_2.cpp:222:6: note: declared private here
+  int loyalty;
+      ^~~~~~~
+..\war3_2.cpp:532:13: error: invalid conversion from 'warrior*' to 'lion*' [-fpermissive]
+   lion *l = wB;
+             ^~
+..\war3_2.cpp:533:9: error: 'int lion::loyalty' is private within this context
+   if(l->loyalty<=0){
+         ^~~~~~~
+..\war3_2.cpp:222:6: note: declared private here
+  int loyalty;
+      ^~~~~~~
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:667:28: error: expected primary-expression before '/' token
+     end = (nHour*60+10>T);*/
+                            ^
+20:57:13 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In member function 'void fields::city_escape(int, int)':
+..\war3_2.cpp:524:13: error: invalid conversion from 'warrior*' to 'lion*' [-fpermissive]
+   lion *l = wR;
+             ^~
+..\war3_2.cpp:525:9: error: 'int lion::loyalty' is private within this context
+   if(l->loyalty<=0){
+         ^~~~~~~
+..\war3_2.cpp:222:6: note: declared private here
+  int loyalty;
+      ^~~~~~~
+..\war3_2.cpp:532:13: error: invalid conversion from 'warrior*' to 'lion*' [-fpermissive]
+   lion *l = wB;
+             ^~
+..\war3_2.cpp:533:9: error: 'int lion::loyalty' is private within this context
+   if(l->loyalty<=0){
+         ^~~~~~~
+..\war3_2.cpp:222:6: note: declared private here
+  int loyalty;
+      ^~~~~~~
+20:59:09 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In member function 'void fields::city_escape(int, int)':
+..\war3_2.cpp:526:10: error: 'class warrior' has no member named 'get_loyalty'
+   if(wR->get_loyalty()<=0){
+          ^~~~~~~~~~~
+..\war3_2.cpp:533:13: error: invalid conversion from 'warrior*' to 'lion*' [-fpermissive]
+   lion *l = wB;
+             ^~
+21:03:06 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+21:04:09 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+21:09:13 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+21:10:34 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+21:12:34 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+21:16:44 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+21:22:07 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In member function 'void fields::city_snatch(int)':
+..\war3_2.cpp:569:28: error: continue statement not within a loop
+   if(wR==NULL || wB==NULL) continue;
+                            ^~~~~~~~
+21:23:01 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+21:24:16 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+21:27:13 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+21:27:59 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+21:31:37 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+..\war3_2.cpp: In function 'int main()':
+..\war3_2.cpp:725:1: error: expected '}' at end of input
+ }
+ ^
+..\war3_2.cpp:622:11: note: to match this '{'
+ int main(){
+           ^
+21:31:54 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+21:33:42 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+Info: Nothing to build for war3
+21:53:14 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+21:55:32 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3
+21:57:52 **** Incremental Build of configuration Debug for project war3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o war3_2.o "..\\war3_2.cpp" 
+g++ -o war3 war3_2.o 
+Info: Nothing to build for war3

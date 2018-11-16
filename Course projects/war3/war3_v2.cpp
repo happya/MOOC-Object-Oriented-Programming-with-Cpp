@@ -1,0 +1,743 @@
+
+
+#include <cstdio>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+class tribe;
+class warrior;
+class weapon;
+class fields;
+const int WEAPON_NUM=3;
+const int WARR_NUM=5;
+const int MAX_WEAPON=10;
+string W_NAMES[WARR_NUM]={"dragon","ninja","iceman","lion","wolf"};
+string WEAPONS[WEAPON_NUM]={"sword","bomb","arrow"};
+int CITY_NUM;
+vector<vector<fields*> > fields_all(2);
+int M,K,T;
+bool r_win=false,b_win=false,gameover=false;
+
+
+
+
+class weapon{
+private:
+	int weapon_idx,AP; //武器编号
+	warrior *owner; //拥有武器的武士
+	int weapon_life;
+	bool is_weapon_ok; //武器是否还能用
+public:
+	friend class warrior;
+	friend class cmp_battle;
+	friend class cmp_snatch;
+	weapon(warrior *wp,int w_idx);
+
+	void update_weapon(){
+		weapon_life--;
+		switch(weapon_idx){
+		case 0://sword，没有使用次数限制，但因为抢夺时排名需要，要计算其使用次数
+			is_weapon_ok=true;
+			break;
+		case 1://bomb，用完就丢
+			is_weapon_ok=false;
+			break;
+		case 2://arrow，只能用两次
+			if(weapon_life<=0) is_weapon_ok=false;
+			break;
+		default: break;
+		}
+	}
+};
+
+struct cmp_battle{
+	bool operator()(const weapon *w1, const weapon *w2) {
+		if(w1->weapon_idx<w2->weapon_idx) return true;//编号小的优先
+		else if(w1->weapon_idx==w2->weapon_idx) return w1->weapon_life<w2->weapon_life;//用过的优先
+		else return false;
+	}
+};
+
+struct cmp_snatch{
+	bool operator()(const weapon *w1, const weapon *w2) {
+		if(w1->weapon_idx<w2->weapon_idx) return true;//编号小的优先
+		else if(w1->weapon_idx==w2->weapon_idx) return w1->weapon_life>w2->weapon_life;//没用过的优先
+		else return false;
+	}
+};
+
+class warrior{
+protected:
+	tribe *ptribe;    //武士属于哪个部落
+	int warr_idx;     //武士种类编号
+	int warr_no;      //武士编号n
+	int HP, ATK;      //武士生命值，攻击力
+	int weapon_n[3];    //武士的武器数目
+	vector<weapon*> own_weapon; //武士拥有哪些武器
+	bool alive;
+public:
+	int city_n;      //武士走到的城市
+//	fields *pcity;// 武士在的城市
+	int weapon_total;
+	static string names[WARR_NUM];
+	static int initHP[WARR_NUM];
+	static int initATK[WARR_NUM];
+	static string weapons[WEAPON_NUM];
+
+	friend class weapon;
+	friend class tribe;
+	friend class fields;
+	friend void battle(warrior &wr, warrior &wb, int nHour,int city_);
+	friend void city_march(int nHour);
+	//成员函数
+	warrior(tribe * p,int idx,int w_no, int hp_,int atk_);
+
+	virtual void print_info(int nHour);
+
+	virtual void init_my_weapon();
+	bool isalive(){return alive;}
+	void update_alive(){if(HP<=0) alive=false;}
+	void warrior_die();
+
+	//特殊武士的事件
+	void yell(int nHour);
+	virtual bool escape(int nHour) {return false;}
+	void use_weapon(int id);
+	void get_weapon(weapon *w);
+	void lose_weapon(weapon *w,int id);
+
+	void attack(warrior *enemy,int id);
+
+	void wolf_snatch(warrior *enemy,int nHour);
+	virtual void march(int nHour); //前进一步
+	virtual void takeover(int nHour);
+	void print_takeover(int nHour);
+	void print_march(int nHour);
+	void report_status(int nHour);
+	virtual ~warrior(){
+		for (int i=0;i<weapon_total;i++)
+			delete own_weapon[i];
+		own_weapon.clear();
+	}
+};
+
+class tribe{
+protected:
+	int elements; //生命元
+	int warr_n[WARR_NUM];//每种战士数
+	int warr_total;
+	int color;
+	int cur_idx;
+	bool win;
+	vector<warrior*> own_warriors;
+public:
+	friend class warrior;
+	friend class lion;
+	friend class iceman;
+	friend class wolf;
+	static int sequence[2][5];
+
+	tribe(int M,int col){
+		elements=M;
+		color=col;
+		cur_idx=0;
+		win=false;
+		warr_total=0;
+	}
+	string get_color(){if(color) return "blue";else return "red";}
+	void produce(int nHour);
+	void update_my_warriors(warrior *w);
+	void print_produce(warrior *w,int nHour){w->print_info(nHour);};
+
+	void report_M(int nHour);
+	void lose_warrior(warrior *w);
+	~tribe(){
+		for (int i=0;i<warr_total;i++)
+			delete own_warriors[i];
+		own_warriors.clear();
+	}
+};
+
+class fields{//一个城市
+public:
+	warrior *wR, *wB;
+	fields():wR(NULL),wB(NULL){}
+	fields(warrior *w1,warrior *w2):wR(w1),wB(w2){}
+
+	void city_escape(int nHour,int n);
+	void city_takeover(int nHour,int tribe_color);
+	void city_march(int nHour,int n);
+
+	void city_snatch(int nHour);
+	void city_report(int nHour);
+	void city_battle(int nHour,int n);
+};
+
+weapon::weapon(warrior *wp,int w_idx):weapon_idx(w_idx),owner(wp){
+		is_weapon_ok=true;
+		switch(w_idx){
+		case 0: weapon_life=0xffff; AP=owner->ATK*2/10;break;
+		case 1: weapon_life=1;AP=owner->ATK*4/10;break;
+		case 2: weapon_life=2;AP=owner->ATK*3/10;break;
+		default: break;
+		}
+}
+warrior::warrior(tribe * p,int idx,int w_no, int hp_,int atk_){
+		ptribe=p;
+		warr_idx=idx;
+		warr_no=w_no;
+		HP=hp_; ATK=atk_;
+		alive=true;
+
+		if(ptribe->color) city_n=CITY_NUM+1;
+		else city_n=0;
+		weapon_total=0;
+		weapon_n[3]={0};
+}
+
+void warrior::warrior_die(){
+	ptribe->warr_total--;
+	ptribe->warr_n[warr_idx]--;
+	delete ptribe->own_warriors[warr_no];
+	ptribe->own_warriors.erase(ptribe->own_warriors.begin()+warr_no);
+}
+//武士子类
+class ninja:public warrior{
+public:
+	ninja(tribe * p,int idx,int w_no, int hp_,int atk_):warrior(p,idx,w_no,hp_,atk_){}
+	virtual void init_my_weapon();
+
+};
+
+class iceman:public warrior{
+public:
+	friend class tribe;
+	iceman(tribe * p,int idx,int w_no, int hp_,int atk_):warrior(p,idx,w_no,hp_,atk_){}
+	virtual void march(int nHour);
+	virtual void takeover(int nHour);
+
+
+};
+
+class lion:public warrior{
+private:
+	int loyalty;
+public:
+	friend class tribe;
+	lion(tribe * p,int idx,int w_no, int hp_,int atk_):warrior(p,idx,w_no,hp_,atk_),loyalty(hp_){}
+	virtual void print_info(int nHour);
+	virtual void march(int nHour);
+	virtual bool escape(int nHour);
+
+};
+
+
+void warrior::print_info(int nHour){
+	string col=ptribe->get_color();
+	string warr_type=warrior::names[warr_idx];
+	printf("%03d:00 %s %s %d born\n",nHour,col.c_str(),warr_type.c_str(),warr_no);
+
+}
+void lion::print_info(int nHour){
+	warrior::print_info(nHour);
+	//string col=ptribe->get_color();
+	//string warr_type=warrior::names[warr_idx];
+	//printf("%03d:00 %s %s %d born\n Its loyalty is %d\n",nHour,col.c_str(),warr_type.c_str(),warr_no,loyalty);
+	printf("Its loyalty is %d\n",loyalty);
+}
+void warrior::init_my_weapon(){
+	for(int i=0;i<=2;i++) weapon_n[i]=0;
+	if(warr_idx==4) weapon_total=0;
+	else{
+		weapon_n[warr_no%3]=1;
+		weapon *w=new weapon(this,warr_no%3);
+		own_weapon.push_back(w);
+		weapon_total=1;
+	}
+}
+void ninja::init_my_weapon(){
+	for(int i=0;i<=2;i++) weapon_n[i]=0;
+	weapon_n[warr_no%3]=1;
+	weapon *w1=new weapon(this,warr_no%3);
+	own_weapon.push_back(w1);
+	weapon_n[(warr_no+1)%3]=1;
+	weapon *w2=new weapon(this,(warr_no+1)%3);
+	own_weapon.push_back(w2);
+	weapon_total=2;
+}
+
+
+
+//使用武器更新
+void warrior::use_weapon(int id){
+	if(own_weapon[id]->is_weapon_ok==false){
+		int w_idx=own_weapon[id]->weapon_idx;
+		delete own_weapon[id];
+		own_weapon.erase(own_weapon.begin()+id);
+		weapon_n[w_idx]--;
+	}
+	return;
+}
+
+//抢来武器更新
+void warrior::get_weapon(weapon *w){
+	if(w->is_weapon_ok){
+		int w_idx=w->weapon_idx;//武器编号
+		weapon_n[w_idx]++; //该种武器+1
+		own_weapon.push_back(w);
+	}
+	return;
+}
+
+//失去武器更新
+
+void warrior::lose_weapon(weapon *w,int id){
+	int w_idx=w->weapon_idx;//武器种类编号
+	weapon_n[w_idx]--; //该种武器减1
+	own_weapon.erase(own_weapon.begin()+id);
+	return;
+}
+
+
+void warrior::print_march(int nHour){
+	string c=ptribe->get_color();
+	string warr_type=names[warr_idx];
+	printf("%03d:10 %s %s %d marched to city %d with %d elements and force %d\n",
+			nHour, c.c_str(),warr_type.c_str(),warr_no,city_n,HP,ATK);
+}
+
+//march 方法只负责让武士移动
+//提供入口检测，即将到司令部的武士不会调用这个方法
+//即将到地方司令部的调用takeover方法
+//并完成移动时的输出，更新其所在城市的city_n
+void warrior::march(int nHour){
+	if(ptribe->color==0){
+		if(city_n==CITY_NUM) return;
+		city_n++;
+	}
+	if(ptribe->color==1){
+		if(city_n==1) return;
+		city_n--;
+	}
+	print_march(nHour);
+}
+void iceman::march(int nHour){
+
+	if(ptribe->color==0) {
+		if(city_n==CITY_NUM) return;
+		city_n++;
+
+	}
+	if(ptribe->color==1) {
+		if(city_n==1) return;
+		city_n--;
+	}
+	HP-=10; update_alive();
+	if(alive) print_march(nHour);
+}
+void lion::march(int nHour){
+	if(ptribe->color==0) {
+		if(city_n==CITY_NUM) return;
+		city_n++;
+	}
+	if(ptribe->color==1) {
+		if(city_n==1) return;
+		city_n--;
+	}
+	loyalty-=K;
+	print_march(nHour);
+}
+
+bool lion::escape(int nHour){
+	if(loyalty<=0){
+		//输出逃跑信息
+		if(ptribe->color==0 && city_n<CITY_NUM+1){
+			printf("%03d:05 red lion %d ran away\n",nHour,warr_no);
+		}
+		if(ptribe->color && city_n>0){
+			printf("%03d:05 blue lion %d ran away\n",nHour,warr_no);
+		}
+		//从部落删掉这个武士
+		//warrior_die();
+		return true;
+	}
+	else return false;
+}
+void warrior::print_takeover(int nHour){
+	string hero=names[warr_idx];
+	if(ptribe->color==1){
+		printf("%03d:10 blue %s %d reached red headquarter with %d elements and force %d\n",
+				nHour,hero.c_str(),warr_no,HP,ATK);
+		printf("%03d:10 red headquarter was taken\n",nHour);
+	}
+	if(ptribe->color==0){
+		printf("%03d:10 red %s %d reached blue headquarter with %d elements and force %d\n",
+				nHour,hero.c_str(),warr_no,HP,ATK);
+		printf("%03d:10 blue headquarter was taken\n",nHour);
+	}
+}
+
+void warrior::takeover(int nHour){
+	if(ptribe->color==1 && city_n==1){
+		//攻占红塔
+		print_takeover(nHour);
+		city_n=0;
+		b_win=true;
+	}
+	if(ptribe->color==0 && city_n==CITY_NUM){
+		//攻占蓝塔
+		print_takeover(nHour);city_n=CITY_NUM+1;
+		r_win=true;
+	}
+	gameover=true;
+}
+void iceman::takeover(int nHour){
+	//这个方法只能在边界调用
+	HP-=10;update_alive();//iceman下一步即将到达终点站，如果到的时候死了，将不做任何事情
+	if(alive) warrior::takeover(nHour);
+}
+
+void warrior::wolf_snatch(warrior *enemy,int nHour){
+		if(enemy->warr_idx==4) return;
+		else if (enemy->own_weapon.size()==0|| own_weapon.size()==MAX_WEAPON) return;
+		else{
+			int your_num=enemy->own_weapon.size();
+			sort(enemy->own_weapon.begin(),enemy->own_weapon.end(),cmp_snatch());
+			int w0=weapon_n[0],w1=weapon_n[1],w2=weapon_n[2];
+			for(int i=0;i<your_num;i++){
+				if(own_weapon.size()==10)break;//抢够了
+				weapon *w = enemy->own_weapon[i]; //定位要抢的武器
+				get_weapon(w); ;//抢到武器
+				enemy->lose_weapon(w,i); //对方武器没了
+			}
+			//抢完了，汇报
+			int add_0 = weapon_n[0]-w0;
+			int add_1 = weapon_n[1]-w1;
+			int add_2 = weapon_n[2]-w2;
+			string my_color=ptribe->get_color();
+			string ur_color=enemy->ptribe->get_color();
+			string enemy_type = names[enemy->warr_idx];
+			int my_n=warr_no,ur_no=enemy->warr_no;
+			if (add_0!=0)
+				printf("%03d:35 %s wolf %d took %d sword from %s %s %d in city %d\n",
+						nHour,my_color.c_str(),my_n,add_0,ur_color.c_str(),enemy_type.c_str(),ur_no,city_n);
+			if (add_1!=0)
+				printf("%03d:35 %s wolf %d took %d bomb from %s %s %d in city %d\n",
+						nHour,my_color.c_str(),my_n,add_1,ur_color.c_str(),enemy_type.c_str(),ur_no,city_n);
+			if (add_2!=0)
+				printf("%03d:35 %s wolf %d took %d arrow from %s %s %d in city %d\n",
+						nHour,my_color.c_str(),my_n,add_2,ur_color.c_str(),enemy_type.c_str(),ur_no,city_n);
+		}
+}
+void warrior::attack(warrior *enemy,int id){
+	if(isalive() && enemy->isalive()){
+		if(HP>0){
+			enemy->HP-=own_weapon[id]->AP;
+			if(own_weapon[id]->weapon_idx==1){
+				if(warr_idx!=1) HP=HP-own_weapon[id]->AP/2;
+			}
+			//打完了，更新状态
+			own_weapon[id]->update_weapon();//更新使用的武器的状态
+			use_weapon(id);//更新武士当前拥有武器状态
+			update_alive(); //更新武士状态
+			enemy->update_alive();//更新敌人状态
+			cout<<"attack happen"<<endl;
+		}
+	}
+}
+
+void warrior::yell(int nHour){
+	if(warr_idx==0){
+		if(ptribe->color==0)
+			printf("%03d:40 red dragon %d yelled in city %d\n",nHour,warr_no,city_n);
+		if(ptribe->color==1)
+			printf("%03d:40 blue dragon %d yelled in city %d\n",nHour,warr_no,city_n);
+	}
+}
+
+void warrior::report_status(int nHour){
+	int w0 = weapon_n[0];
+	int w1 = weapon_n[1];
+	int w2 = weapon_n[2];
+	if(ptribe->color==0){
+		printf("%03d:55 red %s %d has %d sword %d bomb %d arrow and %d elements in city %d\n",
+				nHour,names[warr_idx].c_str(),warr_no,w0,w1,w2,HP,city_n);
+	}
+	if(ptribe->color==1){
+		printf("%03d:55 blue %s %d has %d sword %d bomb %d arrow and %d elements in city %d\n",
+				nHour,names[warr_idx].c_str(),warr_no,w0,w1,w2,HP,city_n);
+	}
+}
+//tribe的成员函数
+
+void tribe::produce(int nHour){
+	//看生命元是否足够
+	int wIdx=sequence[color][cur_idx];//现在要制造武士的编号
+	if(warrior::initHP[wIdx]<=elements){
+		//制造武士
+		int w_HP=warrior::initHP[wIdx];
+		int w_ATK=warrior::initATK[wIdx];
+		elements -= w_HP;                          //司令部生命元减少
+		cur_idx=(cur_idx+1)%5;                    //下次要制造的武士在数组中的序列号
+		//制造武士所需信息：所属部落，武士种类编号，武士id，HP,ATK
+		warrior *s;
+		if(wIdx==0 || wIdx==4) s = new warrior(this,wIdx,warr_total+1,w_HP,w_ATK);
+		else if (wIdx==1) s = new ninja(this,wIdx,warr_total+1,w_HP,w_ATK);
+		else if (wIdx==2) s = new iceman(this,wIdx,warr_total+1,w_HP,w_ATK);
+		else if (wIdx==3) s = new lion(this,wIdx,warr_total+1,w_HP,w_ATK);
+		s->init_my_weapon();
+		s->report_status(nHour);
+		update_my_warriors(s);
+		print_produce(s,nHour);
+		//更新城市的武士信息
+		if(color==0) fields_all[1][0]->wR=s;
+		if(color==1) fields_all[1][CITY_NUM+1]->wB=s;
+	}
+}
+
+void tribe::update_my_warriors(warrior *w){
+	if (w->alive){
+		//武士降生时调用
+		own_warriors.push_back(w);
+		warr_total++;
+		warr_n[w->warr_idx]++;
+	}
+}
+
+
+void tribe::report_M(int nHour){
+	if(color==0)
+		printf("%03d:50 %d elements in red headquarter\n",nHour,elements);
+	if(color==1)
+		printf("%03d:50 %d elements in blue headquarter\n",nHour,elements);
+}
+void fields::city_escape(int nHour,int n){
+	bool is_escape=false;
+	if(wR!=NULL && wR->warr_idx==3){
+		is_escape = wR->escape(nHour);//判断和输出逃跑信息
+		if (is_escape) wR=NULL;
+	}
+
+	if(wB!=NULL && wB->warr_idx==3){
+		is_escape = wB->escape(nHour);//判断和输出逃跑信息
+		if (is_escape) wB=NULL;
+	}
+
+}
+
+
+void fields::city_march(int nHour,int n){
+
+	if(n>0 && n<CITY_NUM+1){//不是司令部，让武士来吧
+		if(fields_all[0][n-1]->wR!=NULL){//有红武士来这个城市
+			//cout<<"red move to "<<n<<endl;
+			warrior *red_w=fields_all[0][n-1]->wR;
+			red_w->march(nHour);//红武士前进
+			if (red_w->isalive()) wR=red_w;
+		}
+
+		if(fields_all[0][n+1]->wB!=NULL){//有蓝武士来这个城市
+			warrior *blue_w=fields_all[0][n+1]->wB;
+			//cout<<warrior::names[blue_w->warr_idx]<<" blue move to "<<n<<endl;
+			blue_w->march(nHour);//蓝武士前进
+			if (blue_w->isalive()) wB=blue_w;
+		}
+	}
+
+}
+void fields::city_takeover(int nHour,int tribe_color){
+	if(tribe_color==0){//红方被占领情况
+		if(fields_all[0][1]->wB!=NULL){//1号城市有蓝武士
+			warrior *hero_b=fields_all[0][1]->wB;//蓝色英雄去占领司令部
+			//cout<<"this blue hero is "<<warrior::names[hero_b->warr_idx]<<" in city "<<hero_b->city_n<<endl;
+			hero_b->takeover(nHour);
+		}
+	}
+	if(tribe_color==1){//蓝方被占领情况
+		if(fields_all[0][CITY_NUM]->wR!=NULL){
+			warrior *hero_r=fields_all[0][CITY_NUM]->wR;
+			//cout<<"this red hero is "<<warrior::names[hero_r->warr_idx]<<" in city "<<hero_r->city_n<<endl;
+			hero_r->takeover(nHour);
+		}
+	}
+}
+void fields::city_snatch(int nHour){
+
+		if(wR==NULL || wB==NULL) return;
+		else {
+
+			if(wR->warr_idx==4 && wB->warr_idx!=4)
+				wR->wolf_snatch(wB,nHour);
+			else if(wR->warr_idx!=4 && wB->warr_idx==4)
+				wB->wolf_snatch(wR,nHour);
+			else return;
+		}
+
+}
+void fields::city_battle(int nHour,int n){
+	if(wR==NULL || wB==NULL) return;
+	sort(wR->own_weapon.begin(),wR->own_weapon.end(),cmp_battle());
+	sort(wB->own_weapon.begin(),wB->own_weapon.end(),cmp_battle());
+	if(n%2){
+		//奇数城市，红先动手
+		//武器先排好序
+		int r_id=0,b_id=0;
+		int round=0;
+		while(round<2){
+			if(wR->isalive()==false ||wB->isalive()==false)break;
+			if(wR->weapon_n==0 && wB->weapon_n==0) break;
+			cout<<"fight begin"<<endl;
+			wR->attack(wB,r_id);
+			r_id++;
+			wB->attack(wR,b_id);
+			b_id++;
+			round++;
+		}
+
+	}
+	else if(n%2==0){
+		//偶数城市，红先动手
+		//武器先排好序
+		int r_id=0,b_id=0;
+		while(true){
+			if(wR->isalive()==false ||wB->isalive()==false)break;
+			if(wR->weapon_n==0 && wB->weapon_n==0) break;
+			wB->attack(wR,r_id);
+			r_id++;
+			wB->attack(wR,b_id);
+			b_id++;
+		}
+
+	}
+}
+void fields::city_report(int nHour){
+	if(wR!=NULL)
+		wR->report_status(nHour);
+	if(wB!=NULL)
+		wB->report_status(nHour);
+}
+//red: iceman,lion,wolf,ninja,dragon
+//blue:lion, dragon,ninja,iceman,wolf
+//input:dragon,ninja,iceman,lion,wolf
+string warrior::names[WARR_NUM]={"dragon","ninja","iceman","lion","wolf"};
+string warrior::weapons[WEAPON_NUM]={"sword","bomb","arrow"};
+//int tribe::sequence[2][5]={{ 2,3,4,1,0 },{3,0,1,2,4}};
+int tribe::sequence[2][5]={{ 4,3,2,1,0 },{0,4,1,2,3}};
+int warrior::initHP[5]={100,20,10,10,10};
+int warrior::initATK[5]={0,0,0,0,0};
+
+
+
+int main(){
+
+	int t;
+	int counts=1;
+	int nHour;
+	bool end=false;
+
+	cin>>t;
+	while(t--){
+		cout<<"Case "<<counts<<":"<<endl;
+		counts++;
+		//接受输入
+		cin>>M>>CITY_NUM>>K>>T;
+		for(int i=0;i<=CITY_NUM+1;i++){
+			fields_all[0].push_back(new fields(NULL,NULL));//old
+			fields_all[1].push_back(new fields(NULL,NULL));//new
+		}
+		tribe Red(M,0),Blue(M,1);
+		for(int i=0;i<WARR_NUM;i++)
+			cin>>warrior::initHP[i];
+		for(int i=0;i<WARR_NUM;i++)
+			cin>>warrior::initATK[i];
+		end=false;
+		nHour = 0;
+		while(!gameover && !end){
+			end = (nHour*60>T);
+			if(!end){//1武士降生
+				Red.produce(nHour);
+				Blue.produce(nHour);
+				end = (nHour*60+5>T);
+
+				cout<<"0 min happend"<<endl;
+			}
+			if(!end && !gameover){
+				//2.lion逃跑 5min
+				for(int i=1;i<=CITY_NUM;i++)
+					fields_all[1][i]->city_escape(nHour,i);
+				end = (nHour*60+10>T);
+
+				cout<<"5 min happened"<<endl;
+			}
+			if(!end && !gameover){//nMin==10
+				//3.武士行军，march
+				//7.武士抵达敌军司令部
+				//8.司令部被占领
+				fields_all[0].assign(fields_all[1].begin(),fields_all[1].end());
+
+				fields_all[1].clear();
+				for(int i=0;i<=CITY_NUM+1;i++){
+					fields_all[1].push_back(new fields(NULL,NULL));//new
+				}
+				//看红方是否被占领
+				fields_all[1][0]->city_takeover(nHour,0);
+				//march
+				for(int i=1;i<=CITY_NUM;i++){
+					fields_all[1][i]->city_march(nHour,i);//第i号城市的行动情况
+				}
+				//看蓝方是否被占领
+				fields_all[1][CITY_NUM]->city_takeover(nHour,1);
+
+
+				end=(nHour*60+35>T);
+				cout<<"10 min happened"<<endl;
+
+
+			}
+			if(!end && !gameover){//nMin==35
+				//4.wolf抢武器
+				for(int i=0;i<=CITY_NUM+1;i++)
+					if(fields_all[1][i]->wR && fields_all[1][i]->wB)
+						printf("red and blue meet in city %d\n",i);
+
+				for(int i=1;i<=CITY_NUM;i++)
+					fields_all[1][i]->city_snatch(nHour);
+				end=(nHour*60+40>T);
+				cout<<"35 min happened"<<endl;
+			}
+			if(!end && !gameover){//nMin==40
+				//5.报告战斗情况
+				//6.dragon欢呼
+				for(int i=1;i<=CITY_NUM;i++)
+					fields_all[1][i]->city_battle(nHour,i);
+				end=(nHour*60+50>T);
+				cout<<"40 min happened"<<endl;
+			}
+			if(!end && !gameover){//nMin==50
+				//9.司令部报告生命元数量
+				Red.report_M(nHour);
+				Blue.report_M(nHour);
+				end=(nHour*60+55>T);
+				cout<<"50 min happened"<<endl;
+			}
+			if(!end && !gameover){//nMin==55
+				//10.武士报告情况
+				for(int i=0;i<=CITY_NUM+1;i++)
+					fields_all[1][i]->city_report(nHour);
+				cout<<"55 min happened"<<endl;
+			}
+			nHour++;
+			end=(nHour*60>T);
+		}
+	}
+
+	return 0;
+}
+
+
+
+
+
